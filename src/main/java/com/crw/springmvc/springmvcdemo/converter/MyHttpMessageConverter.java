@@ -42,7 +42,9 @@ public class MyHttpMessageConverter extends AbstractHttpMessageConverter<MyMsgOb
      */
     @Override
     protected void writeInternal(MyMsgObj myMsgObj, HttpOutputMessage httpOutputMessage) throws IOException, HttpMessageNotWritableException {
-        String resp = "hello:" + myMsgObj.getCode() + "-" + myMsgObj.getMsg();
+        myMsgObj.setCode("hello:" + myMsgObj.getCode());
+        myMsgObj.setMsg("hello:" + myMsgObj.getMsg());
+        httpOutputMessage.getBody().write(myMsgObj.toString().getBytes());
     }
 
 }

@@ -79,7 +79,7 @@ public class MyWebMvcConfig extends WebMvcConfigurerAdapter {
      */
     @Override
     public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
-        converters.add(mappingJackson2HttpMessageConverter());
+         converters.add(mappingJackson2HttpMessageConverter());
     }
 
     /**

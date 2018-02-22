@@ -30,4 +30,12 @@ public class MyMsgObj {
     public void setMsg(String msg) {
         this.msg = msg;
     }
+
+    @Override
+    public String toString() {
+        return "MyMsgObj{" +
+                "code='" + code + '\'' +
+                ", msg='" + msg + '\'' +
+                '}';
+    }
 }

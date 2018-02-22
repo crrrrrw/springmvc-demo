@@ -10,8 +10,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class ConverterController {
 
     @ResponseBody
-    @RequestMapping("/converter")
+    @RequestMapping(value = "/converter", produces = "application/x-crw")
     public MyMsgObj converter(@RequestBody MyMsgObj myMsgObj) {
+        myMsgObj.setMsg("process->" + myMsgObj.getMsg());
         return myMsgObj;
     }
 
